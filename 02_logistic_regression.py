@@ -11,8 +11,7 @@ def init_weights(shape):
 
 def model(X, w):
     return tf.matmul(X, w) # notice we use the same model as linear regression, this is because there is a baked in cost function which performs softmax and cross entropy
-
-
+                           # Multiplies matrix a by matrix b, producing a * b.
 mnist = input_data.read_data_sets("MNIST_data/", one_hot=True)
 trX, trY, teX, teY = mnist.train.images, mnist.train.labels, mnist.test.images, mnist.test.labels
 
