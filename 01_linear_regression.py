@@ -3,7 +3,7 @@
 import tensorflow as tf
 import numpy as np
 
-trX = np.linspace(-1, 1, 101)
+trX = np.linspace(-1, 1, 101)  #numpy.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)
 trY = 2 * trX + np.random.randn(*trX.shape) * 0.33 # create a y value which is approximately linear but with some random noise
 
 X = tf.placeholder("float") # create symbolic variables
@@ -27,7 +27,7 @@ with tf.Session() as sess:
     tf.initialize_all_variables().run()
 
     for i in range(100):
-        for (x, y) in zip(trX, trY):
+        for (x, y) in zip(trX, trY):      # zip?
             sess.run(train_op, feed_dict={X: x, Y: y})
 
     print(sess.run(w))  # It should be something around 2
