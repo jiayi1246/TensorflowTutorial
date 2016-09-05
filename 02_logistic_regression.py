@@ -25,7 +25,7 @@ py_x = model(X, w)
 cost = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits(py_x, Y)) # compute mean cross entropy (softmax is applied internally)
 train_op = tf.train.GradientDescentOptimizer(0.05).minimize(cost) # construct optimizer
 predict_op = tf.argmax(py_x, 1) # at predict time, evaluate the argmax of the logistic regression
-
+                                #tf.argmax(input, dimension, name=None)Returns the index with the largest value across dimensions of a tensor.
 # Launch the graph in a session
 with tf.Session() as sess:
     # you need to initialize all variables
